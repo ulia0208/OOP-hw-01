@@ -19,15 +19,13 @@ public class FileHandler implements SafeTo,LoadFrom {
     }
 
     @Override
-    public boolean save(String path, Serializable obj) {
+    public void save(String path, Serializable obj) {
 
         try (ObjectOutputStream objectOutputStream=new ObjectOutputStream(new FileOutputStream(path))){
             objectOutputStream.writeObject(obj);
-            return true;
         }catch (Exception e){
             e.getMessage();
             e.printStackTrace();
-            return false;
         }
     }
 }

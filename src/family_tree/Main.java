@@ -23,7 +23,7 @@ public class Main {
         fileHandler.save(String.valueOf(familyTree),"src/ru.gb.family_tree/tree.out");
         System.out.println(familyTree);
 
-        fileHandler.save("src/family_tree/fTree.out", familyTree);
+        fileHandler.save("src/family_tree/famTree.out", familyTree);
 
     }
 }
