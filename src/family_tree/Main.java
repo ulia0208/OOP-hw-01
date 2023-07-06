@@ -1,12 +1,13 @@
-package ru.gb.family_tree;
+package family_tree;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
         FamilyTree familyTree=new FamilyTree();
+        FileHandler fileHandler=new FileHandler();
+        FileHandler serialize=new FileHandler();
 
         familyTree.addHuman(new Human("Иван Иванов", LocalDate.of(1960,1,21), Gender.Male));
         familyTree.addHuman(new Human("Лилия Иванова", LocalDate.of(1962,4,11), Gender.Female));
@@ -19,6 +20,11 @@ public class Main {
         familyTree.addHuman(new Human("Мария Иванова", LocalDate.of(2018,11,10), Gender.Female, familyTree.getByName("Сергей Иванов"), familyTree.getByName("Инна Иванова")));
 
         System.out.println(familyTree.getInfo());
+        fileHandler.save(String.valueOf(familyTree),"src/ru.gb.family_tree/tree.out");
+        //FamilyTree familyTree=(FamilyTree)fileHandler.read("src/ru.gb.family_tree/tree.out");
+        System.out.println(familyTree);
+
+        fileHandler.save("src/family_tree/fTree.out", familyTree);
 
     }
 }

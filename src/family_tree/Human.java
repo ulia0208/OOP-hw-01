@@ -1,12 +1,11 @@
-package ru.gb.family_tree;
+package family_tree;
 
-import org.w3c.dom.Node;
-
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Human {
+public class Human implements Serializable {
     private static int count;
 
     private int id=0;
