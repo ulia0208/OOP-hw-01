@@ -21,7 +21,6 @@ public class Main {
 
         System.out.println(familyTree.getInfo());
         fileHandler.save(String.valueOf(familyTree),"src/ru.gb.family_tree/tree.out");
-        //FamilyTree familyTree=(FamilyTree)fileHandler.read("src/ru.gb.family_tree/tree.out");
         System.out.println(familyTree);
 
         fileHandler.save("src/family_tree/fTree.out", familyTree);

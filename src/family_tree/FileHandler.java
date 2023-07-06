@@ -3,18 +3,19 @@ package family_tree;
 import java.io.*;
 
 
-public class FileHandler implements SafeTo {
+public class FileHandler implements SafeTo,LoadFrom {
 
-    public Object load(String path){
+    public Serializable load(String path){
+        Serializable personRestored=null;
         try (ObjectInputStream objectInputStream=new ObjectInputStream(new FileInputStream(path))){
-            //personRestored=(Serializable) objectInputStream.readObject();
+            personRestored=(Serializable) objectInputStream.readObject();
             System.out.println("Загружено");
-            return objectInputStream.readObject();
+            //return objectInputStream.readObject();
         }catch (Exception e){
             e.getMessage();
             e.printStackTrace();
-            return null;
         }
+        return personRestored;
     }
 
     @Override
